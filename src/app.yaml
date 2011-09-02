@@ -1,0 +1,23 @@
+application: gpipes
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /favicon.ico
+  static_files: public/images/favicon.ico
+  upload: public/images/favicon.ico
+  mime_type: image/x-icon
+
+- url: /result/.*
+  script: main.py
+
+- url: /_ah/queue/deferred
+  script: $PYTHON_LIB/google/appengine/ext/deferred/handler.py
+  login: admin
+
+- url: .*
+  script: main.py
+  login: admin
+
+

@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Gpipes</title>
+    </head>
+    <body>
+        <div id="header">
+            <h1>パイプライン一覧</h1>
+        </div>
+
+        <div id="main">
+            <div id="pipeline_list">
+                {% for name in pipelines %}
+                <ul>
+                    <li>{{ name }}
+                    <a href="/result/{{ name }}" target="_blank">[結果を表示]</a>
+                    <a href="/{{ name }}" target="_blank">[今すぐ実行]</a>
+                    </li>
+                </ul>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div id="footer">
+            <address>
+                &copy; 2010 
+                <a href="http://d.hatena.ne.jp/griefworker">griefworker</a>
+            </address>
+        </div>
+    </body>
+</html>
+
